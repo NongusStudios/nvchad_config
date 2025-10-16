@@ -4,7 +4,18 @@ return {
     -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
     },
-
+    -- Remove buffer (Text) as a source for nvim-cmp
+    {
+    "hrsh7th/nvim-cmp",
+    opts = {
+        sources = {
+            { name = "luasnip" },
+            { name = "nvim_lsp" },
+            { name = "nvim_lua" },
+            { name = "path" },
+        },
+    }
+    },
     -- These are some examples, uncomment them if you want to see them work!
     {
     "neovim/nvim-lspconfig",
@@ -12,5 +23,4 @@ return {
       require "configs.lspconfig"
     end,
     },
-
 }

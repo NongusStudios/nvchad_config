@@ -11,5 +11,5 @@ o.softtabstop = 4
 
 o.relativenumber = true
 
-o.spell = true
+o.spell = false
 o.spelllang = "en"

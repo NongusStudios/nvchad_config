@@ -9,10 +9,23 @@ M.base46 = {
 	theme = "gruvchad",
 }
 
-M.nvdash = { load_on_startup = true }
+M.nvdash = {
+    load_on_startup = true,
+}
 M.ui = {
     tabufline = {
-        lazyload = false
+        lazyload = false,
+    },
+    statusline = {
+        enabled = true,
+        theme = "minimal",
+        separator_style = "block",
+    },
+    cmp = {
+        style = "flat_dark",
+    },
+    telescope = {
+        style = "borderless",
     }
 }
 
