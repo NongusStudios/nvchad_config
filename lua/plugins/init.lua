@@ -9,6 +9,7 @@ return {
     "hrsh7th/nvim-cmp",
     opts = {
         sources = {
+            { name = "luasnip" },
             { name = "nvim_lsp" },
             { name = "nvim_lua" },
             { name = "path" },
@@ -23,7 +24,4 @@ return {
       require "configs.lspconfig"
     end,
     },
-
-    --{ "L3MON4D3/LuaSnip", enabled = false },
-    --{ "saadparwaiz1/cmp_luasnip", enabled = false },
 }

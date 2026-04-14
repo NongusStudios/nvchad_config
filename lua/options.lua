@@ -13,3 +13,5 @@ o.relativenumber = true
 
 o.spell = false
 o.spelllang = "en"
+
+o.scrolloff = 8
