@@ -1,3 +1,5 @@
+-- Configuration from https://simondalvai.org/blog/godot-neovim/
+
 -- paths to check for project.godot file
 local paths_to_check = {'/', '/../'}
 local is_godot_project = false
@@ -21,6 +23,20 @@ if is_godot_project and not is_server_running then
 end
 
 if is_godot_project then
+    -- GD Scipt Config
+    local gdscript_port = os.getenv "GDScript_Port" or "6005"
+    local gdscript_cmd = vim.lsp.rpc.connect("127.0.0.1", tonumber(gdscript_port))
+    vim.lsp.config("gdscript", {
+        cmd = gdscript_cmd,
+        filetypes = { "gd", "gdscript" },
+        root_markers = { "project.godot", ".git" }
+    })
+
+    vim.lsp.enable({
+        "gdscript",
+        "gdshader"
+    })
+
     -- write breakpoint to new line
     vim.api.nvim_create_user_command('GodotBreakpoint', function()
         vim.cmd('normal! obreakpoint' )

@@ -24,4 +24,13 @@ return {
       require "configs.lspconfig"
     end,
     },
+
+    {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+        filters = {
+            custom = { "*.uid" },
+        },
+    },
+    },
 }
